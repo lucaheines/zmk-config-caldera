@@ -1,25 +1,18 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command, `snippet` to add a Zephyr snippet, and
-# `artifact-name` to assign a name to distinguish build outputs from each other:
-#
-# board: [ "nice_nano" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano
-#     shield: reviung41
-#   - board: nice_nano
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
-#
+# Normal firmware for the original Caldera PCB and nice!nano v2.
+# Debug variants use the same keymap and additionally expose USB serial logs.
 ---
 include:
   - board: nice_nano_v2
-    shield: corne_left
+    shield: caldera_left
+    artifact-name: caldera_left
   - board: nice_nano_v2
-    shield: corne_right
+    shield: caldera_right
+    artifact-name: caldera_right
+  - board: nice_nano_v2
+    shield: caldera_left
+    snippet: zmk-usb-logging
+    artifact-name: caldera_left-debug
+  - board: nice_nano_v2
+    shield: caldera_right
+    snippet: zmk-usb-logging
+    artifact-name: caldera_right-debug
