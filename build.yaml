@@ -1,18 +1,7 @@
-# Normal firmware for the original Caldera PCB and nice!nano v2.
-# Debug variants use the same keymap and additionally expose USB serial logs.
+# Temporary host-pairing clear utility. Restore the normal left firmware after use.
 ---
 include:
   - board: nice_nano_v2
     shield: caldera_left
-    artifact-name: caldera_left
-  - board: nice_nano_v2
-    shield: caldera_right
-    artifact-name: caldera_right
-  - board: nice_nano_v2
-    shield: caldera_left
     snippet: zmk-usb-logging
-    artifact-name: caldera_left-debug
-  - board: nice_nano_v2
-    shield: caldera_right
-    snippet: zmk-usb-logging
-    artifact-name: caldera_right-debug
+    artifact-name: caldera_left-clear-hosts
