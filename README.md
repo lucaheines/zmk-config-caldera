@@ -17,20 +17,50 @@ Firmware flashing does not intentionally erase saved Bluetooth pairings. If the 
 
 ## Layout
 
-The base layer follows the original Caldera keymap. Each half has 30 switches:
+The base layout keeps Esc, the number row, punctuation and modifiers in their current positions. The innermost bottom key on the right half is now a dedicated momentary Fn key; the next key is Space. A dedicated Fn has no tap/hold decision delay. Left Space/Fn remains available when using the left half alone: tap for Space, hold for Fn. The other left Space remains a plain Space.
 
 ```text
- Left half                                  Right half
- GRAVE  1    2    3    4    5                 6    7    8    9    0    BACKSPACE
- TAB    Q    W    E    R    T                 Y    U    I    O    P    BACKSLASH
- CAPS   A    S    D    F    G                 H    J    K    L    ;    ENTER
- SHIFT  Z    X    C    V    B                 N    M    ,    .    /    '
- CTRL   ALT  GUI  SPC  ALT  GUI               SPC  LOW  LEFT DOWN UP   RIGHT
+ Left half                                      Right half
+ ESC    1      2      3          4      5         6      7      8      9      0      BSPC
+ TAB    Q      W      E          R      T         Y      U      I      O      P      BACKSLASH
+ CAPS   A      S      D          F      G         H      J      K      L      ;      ENTER
+ SHIFT  Z      X      C          V      B         N      M      ,      .      /      '
+ CTRL   ALT    GUI    SPACE/FN   GRAVE  SPACE     FN     SPACE  LEFT   DOWN   UP     RIGHT
 ```
 
-GUI is Command on macOS. LOW is the second key from the left on the right half's bottom row. It changes layers only while held; pressing it alone does not type a character. Modifier keys also need a second key to produce a visible effect.
+GUI is Command on macOS and Windows on Windows. Alt is Option on macOS. With a US host keyboard layout, Shift + slash already types question mark; Shift + apostrophe types a double quote. The Fn layer also provides these symbols directly.
 
-On the lower layer, the left top-row keys in positions 2–6 select Bluetooth profiles 1–5; the right top-right key clears the selected profile. Parentheses are on left D/F positions; brackets, minus and equals are on right J/K/L/semicolon positions. Other positions fall through to the base layer.
+### Fn: function keys, symbols and navigation
+
+Hold either Fn key. Fn + number 1 through 0 sends F1 through F10. Fn + Esc is F11; Fn + Backspace is F12.
+
+```text
+ Left half                                      Right half
+ F11    F1     F2     F3         F4     F5        F6     F7     F8     F9     F10    F12
+ SYSTEM !      @      #          $      %         ^      &      *      _      +      PIPE
+ DELETE [      ]      (          )      -         LEFT   DOWN   UP     RIGHT  :      ENTER
+ SHIFT  {      }      <          >      =         HOME   PGDN   PGUP   END    ?      DQUOTE
+ CTRL   ALT    GUI    SPACE/FN   TILDE  SPACE     FN     SPACE  LEFT   DOWN   UP     RIGHT
+```
+
+Symbol names assume the computer uses a US keyboard layout. Shift and the other modifiers remain available for navigation selections and shortcuts. F-keys send standard F1–F12 keycodes; media controls are separate. Standard Home/End behavior can differ between Mac and Windows applications.
+
+### System: Bluetooth, output and media
+
+Hold Fn, then hold Tab, then tap a control key. Release Tab and Fn to return to normal typing.
+
+- Number keys 1–5 select Bluetooth profiles 1–5.
+- Q selects USB output; W selects Bluetooth output.
+- G clears the selected computer's Bluetooth pairing. Remove the old Caldera entry on that computer before pairing again. No all-profile clear or full settings reset is mapped.
+- Y/U/I are previous track, play/pause, next track.
+- H/J/K are mute, volume down, volume up.
+- O/P are brightness down/up; support depends on the host and display.
+
+The left Space/Fn + Tab combination keeps all Bluetooth controls reachable with only the left half. Bluetooth controls have moved from the old Fn + number/Esc shortcuts to this System layer.
+
+## Applying this keymap
+
+This redesign changes only the keymap. On an already-working split, flash the newly built **normal left firmware** to apply it; the left central half interprets keys from both sides. A matching right artifact is also built. A normal keymap flash does not clear saved pairings.
 
 ## Optional debug firmware
 
