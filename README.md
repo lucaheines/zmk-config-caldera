@@ -17,7 +17,7 @@ Firmware flashing does not intentionally erase saved Bluetooth pairings. If the 
 
 ## Layout
 
-The base layout keeps Esc, the number row, punctuation and modifiers in their current positions. The innermost bottom key on the right half is now a dedicated momentary Fn key; the next key is Space. A dedicated Fn has no tap/hold decision delay. Left Space/Fn remains available when using the left half alone: tap for Space, hold for Fn. The other left Space remains a plain Space.
+The base layout keeps Esc, the number row, punctuation and modifiers in their current positions. The innermost bottom key on the right half is Space; the next key is a dedicated momentary Fn key. A dedicated Fn has no tap/hold decision delay. Left Space/Fn remains available when using the left half alone: tap for Space, hold for Fn. The other left Space remains a plain Space.
 
 ```text
  Left half                                      Right half
@@ -25,7 +25,7 @@ The base layout keeps Esc, the number row, punctuation and modifiers in their cu
  TAB    Q      W      E          R      T         Y      U      I      O      P      BACKSLASH
  CAPS   A      S      D          F      G         H      J      K      L      ;      ENTER
  SHIFT  Z      X      C          V      B         N      M      ,      .      /      '
- CTRL   ALT    GUI    SPACE/FN   GRAVE  SPACE     FN     SPACE  LEFT   DOWN   UP     RIGHT
+ CTRL   ALT    GUI    SPACE/FN   GRAVE  SPACE     SPACE  FN     LEFT   DOWN   UP     RIGHT
 ```
 
 GUI is Command on macOS and Windows on Windows. Alt is Option on macOS. With a US host keyboard layout, Shift + slash already types question mark; Shift + apostrophe types a double quote. The Fn layer also provides these symbols directly.
@@ -40,7 +40,7 @@ Hold either Fn key. Fn + number 1 through 0 sends F1 through F10. Fn + Esc is F1
  SYSTEM !      @      #          $      %         ^      &      *      _      +      PIPE
  DELETE [      ]      (          )      -         LEFT   DOWN   UP     RIGHT  :      ENTER
  SHIFT  {      }      <          >      =         HOME   PGDN   PGUP   END    ?      DQUOTE
- CTRL   ALT    GUI    SPACE/FN   TILDE  SPACE     FN     SPACE  LEFT   DOWN   UP     RIGHT
+ CTRL   ALT    GUI    SPACE/FN   TILDE  SPACE     SPACE  FN     LEFT   DOWN   UP     RIGHT
 ```
 
 Symbol names assume the computer uses a US keyboard layout. Shift and the other modifiers remain available for navigation selections and shortcuts. F-keys send standard F1–F12 keycodes; media controls are separate. Standard Home/End behavior can differ between Mac and Windows applications.
