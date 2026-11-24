@@ -51,7 +51,7 @@ Hold Fn, then hold Tab, then tap a control key. Release Tab and Fn to return to 
 
 - Number keys 1–5 select Bluetooth profiles 1–5.
 - Q selects USB output; W selects Bluetooth output.
-- G clears the selected computer's Bluetooth pairing. Remove the old Caldera entry on that computer before pairing again. No all-profile clear or full settings reset is mapped.
+- Caps Lock (or G) clears the selected computer's Bluetooth pairing. Caps Lock keeps this control accessible while the left rightmost column is unavailable. Remove the old Caldera entry on that computer before pairing again. No all-profile clear or full settings reset is mapped.
 - Y/U/I are previous track, play/pause, next track.
 - H/J/K are mute, volume down, volume up.
 - O/P are brightness down/up; support depends on the host and display.
